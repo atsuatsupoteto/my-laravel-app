@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Folder;
+use App\Models\Folder;
 use Illuminate\Http\Request;
 
 // Javaと一緒。TaskControllerはControllerクラスを継承
