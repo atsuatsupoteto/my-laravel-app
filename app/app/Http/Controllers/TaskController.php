@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Folder;
 use Illuminate\Http\Request;
 
-// Javaと一緒。TaskControllerにControllerクラスを継承している。
+// Javaと一緒。TaskControllerはControllerクラスを継承
 class TaskController extends Controller
 {
     public function index()
