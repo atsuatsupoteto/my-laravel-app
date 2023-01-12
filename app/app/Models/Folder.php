@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Folder extends Model
 {
+    //デフォルトで作成されていた
     use HasFactory;
+    
+    public function tasks()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
 }

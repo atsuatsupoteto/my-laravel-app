@@ -18,7 +18,8 @@ class TaskController extends Controller
         $current_folder = Folder::find($id);
 
         //選ばれたフォルダに紐づくタスクを取得
-        $tasks = Task::where('folder_id', $current_folder->id)->get();
+        //$tasks = Task::where('folder_id', $current_folder->id)->get();
+        $tasks = $current_folder->tasks()->get();
 
         //view関数でテンプレートに取得データを渡す
         return view('tasks/index', [
