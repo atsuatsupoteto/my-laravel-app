@@ -28,7 +28,7 @@ class CreateFolder extends FormRequest
     {
         return [
             //requiredはLaravelがデフォルトで提供している必須チェック
-            'title' => 'required',
+            'title' => 'required|max:20',
         ];
     }
     public function attributes()
