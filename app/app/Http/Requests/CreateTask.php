@@ -28,6 +28,15 @@ class CreateTask extends FormRequest
             'due_date' => 'required|date|after_or_equal:today',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'title' => 'タイトル',
+            'due_date' => '期限日',
+        ];
+    }
+    
     public function messages()
     {
         return [

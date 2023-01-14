@@ -19,6 +19,8 @@
     </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>
+        //テスト用
+        <env name="DB_CONNECTION" value="sqlite_testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
         <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
