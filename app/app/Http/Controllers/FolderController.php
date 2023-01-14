@@ -14,7 +14,7 @@ class FolderController extends Controller
     }
 
     // 引数にインポートしたRequestクラスを受け入れる
-    public function create(CreateFolder $request)
+    public function create(Request $request)
     {
         //フォルダモデルのインスタンスを作成
         $folder = new Folder();
