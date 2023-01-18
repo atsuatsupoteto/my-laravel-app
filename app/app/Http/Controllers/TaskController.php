@@ -7,6 +7,7 @@ use App\Models\Task;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateTask;
 use App\Http\Requests\EditTask;
+use Illuminate\Support\Facades\Auth;
 
 // Javaと一緒。TaskControllerはControllerクラスを継承
 class TaskController extends Controller
@@ -23,7 +24,9 @@ class TaskController extends Controller
     public function index(int $id)
     {
         //Folderモデルのallメソッドで全てのフォルダを取得
-        $folders = Folder::all();
+        //$folders = Folder::all();
+        // ユーザーのフォルダを取得する
+        $folders = Auth::user()->folders()->get();
         
         //選ばれたフォルダを取得
         $current_folder = Folder::find($id);
