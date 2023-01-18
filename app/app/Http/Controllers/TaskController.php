@@ -73,7 +73,8 @@ class TaskController extends Controller
      */
     public function showEditForm(Folder $folder, Task $task)
     {
-        return view('tasks/edit', [
+        $this->checkRelation($folder, $task);
+            return view('tasks/edit', [
             'task' => $task,
         ]);
     }
@@ -87,6 +88,7 @@ class TaskController extends Controller
      */
     public function edit(Folder $folder, Task $task, EditTask $request)
     {     
+        $this->checkRelation($folder, $task);
 
         //編集対象のタスクデータに入力値を保存
         $task->title = $request->title;
@@ -99,5 +101,11 @@ class TaskController extends Controller
             //'id' => $task->folder_id,
             'folder' => $task->folder_id,
         ]);
+    }
+    private function checkRelation(Folder $folder, Task $task)
+    {
+        if($folder->id !== $task->folder_id){
+            abort(404);
+        }
     }
 }
