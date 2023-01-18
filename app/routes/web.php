@@ -32,6 +32,9 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 //    return view('welcome');
 //});
 
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
