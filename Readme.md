@@ -1,8 +1,10 @@
+# 普通のTodoアプリ
+
 #お手軽LAMP環境構築
 PHP + Nginx + MySQL
 
 #ファイル置き場
-appディレクトリ配下に置いてください。
+appディレクトリ配下
 
 ```
 docker-compose up -d
